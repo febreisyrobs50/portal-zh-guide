@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>leyu · 杂志专题</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f7f3ed;
+            font-family: 'Georgia', 'Times New Roman', 'Noto Serif SC', serif;
+            color: #2c2a28;
+            line-height: 1.7;
+            padding: 2rem 1.5rem;
+        }
+
+        .wrapper {
+            max-width: 880px;
+            margin: 0 auto;
+            background-color: #fefcf8;
+            border-radius: 28px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+            padding: 2.5rem 2.2rem 3rem;
+        }
+
+        /* hero */
+        .hero {
+            margin-bottom: 2.2rem;
+            border-left: 5px solid #b79d7e;
+            padding-left: 1.8rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 450;
+            letter-spacing: 1px;
+            color: #4d3e2f;
+            margin-bottom: 0.3rem;
+        }
+
+        .hero h1 small {
+            font-size: 1.2rem;
+            font-weight: 300;
+            color: #8a7a6a;
+            margin-left: 0.6rem;
+        }
+
+        .hero .subhead {
+            font-size: 1rem;
+            color: #7b6d5e;
+            border-bottom: 1px solid #ddd6cc;
+            padding-bottom: 0.75rem;
+            margin-top: 0.2rem;
+            font-style: italic;
+        }
+
+        /* 背景说明块 */
+        .context-box {
+            background: #f2ece4;
+            padding: 1.5rem 2rem;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            font-size: 0.98rem;
+            border: 1px solid #e2d7cb;
+            position: relative;
+        }
+
+        .context-box::before {
+            content: "⏤ 背景";
+            position: absolute;
+            top: -0.65rem;
+            left: 1.5rem;
+            background: #f2ece4;
+            padding: 0 0.5rem;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            color: #8f7d6a;
+            font-weight: 400;
+        }
+
+        .context-box p {
+            margin-bottom: 0.6rem;
+        }
+
+        .context-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 三段自然介绍 */
+        .article-body h2 {
+            font-size: 1.45rem;
+            font-weight: 430;
+            color: #4f3f2f;
+            border-bottom: 1px solid #ece2d6;
+            padding-bottom: 0.3rem;
+            margin-top: 2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .article-body h2:first-of-type {
+            margin-top: 0.2rem;
+        }
+
+        .article-body p {
+            margin-bottom: 1rem;
+            text-align: justify;
+            word-spacing: 0.5px;
+        }
+
+        .article-body p:last-of-type {
+            margin-bottom: 0;
+        }
+
+        /* 引用块 / 提示框 */
+        .pull-quote {
+            background: #f3ede6;
+            border-left: 6px solid #b79d7e;
+            margin: 1.8rem 0 1.4rem;
+            padding: 1rem 1.6rem;
+            border-radius: 0 16px 16px 0;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            color: #3e352b;
+            font-style: normal;
+            box-shadow: inset 0 1px 4px rgba(0,0,0,0.02);
+        }
+
+        .pull-quote strong {
+            font-weight: 500;
+            color: #6e5a46;
+        }
+
+        .insight-note {
+            background: #faf6f0;
+            border: 1px dashed #cbb9a6;
+            padding: 0.9rem 1.4rem;
+            border-radius: 24px;
+            margin: 1.6rem 0;
+            font-size: 0.95rem;
+            color: #3b332a;
+        }
+
+        .insight-note span {
+            background: #e1d4c4;
+            padding: 0.1rem 0.6rem;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            color: #4d3c2b;
+            margin-right: 0.5rem;
+        }
+
+        /* 页尾访问提示 */
+        .footer-access {
+            margin-top: 2.8rem;
+            padding-top: 1.2rem;
+            border-top: 2px solid #e5dbcf;
+            text-align: center;
+            font-size: 0.97rem;
+            color: #5f5243;
+        }
+
+        .footer-access a {
+            color: #4f3d2b;
+            text-decoration: none;
+            border-bottom: 1px dotted #b79d7e;
+            padding-bottom: 1px;
+            transition: border 0.2s, color 0.2s;
+        }
+
+        .footer-access a:hover {
+            border-bottom: 1px solid #7d624a;
+            color: #3c2e20;
+        }
+
+        .footer-access .muted {
+            color: #948675;
+            margin-top: 0.6rem;
+            font-size: 0.85rem;
+        }
+
+        /* 响应 */
+        @media (max-width: 640px) {
+            body {
+                padding: 1rem 0.8rem;
+            }
+            .wrapper {
+                padding: 1.8rem 1.2rem 2rem;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .hero h1 small {
+                font-size: 1rem;
+                display: block;
+                margin-left: 0;
+                margin-top: 0.1rem;
+            }
+            .context-box {
+                padding: 1.2rem 1.2rem;
+            }
+            .pull-quote {
+                padding: 0.8rem 1rem;
+                margin: 1.2rem 0;
+            }
+            .article-body h2 {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 440px) {
+            .wrapper {
+                padding: 1.2rem 0.9rem;
+            }
+            .hero {
+                padding-left: 0.8rem;
+            }
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+
+    <!-- hero 首页横幅 -->
+    <div class="hero">
+        <h1>leyu <small>· 杂志专题</small></h1>
+        <div class="subhead">信息与信任 · 从站点说明出发</div>
+    </div>
+
+    <!-- 背景说明 -->
+    <div class="context-box">
+        <p>在网络内容日益庞杂的当下，选择一个可以持续获取信息的站点，需要对其背景与传递方式有基本的理解。<strong>leyu</strong> 所对应的门户（portal）定位，并非追求瞬时流量，而是希望为访问者提供一个相对清晰、克制的信息起点。这一专题尝试从站点定位与可信说明的角度，梳理其内容脉络与呈现逻辑。</p>
+        <p>以下三段介绍分别涉及站点的内容基调、信息筛选原则以及日常应用场景，帮助读者建立整体认识。</p>
+    </div>
+
+    <!-- 三段自然介绍 -->
+    <div class="article-body">
+
+        <h2>一、内容基调 · 平实与连贯</h2>
+        <p>从整体编排来看，<strong>leyu</strong> 的内容不倚重标题党的修辞，而是以段落之间的自然承接推动阅读。无论是专题页面还是日常更新，行文都倾向于保持一种克制的知识型语气，避免过度包装。这种风格在信息过载的环境中反而提供了一种稳定的阅读节奏——访问者不必时刻警惕夸张表述，可以更专注于内容本身。</p>
+
+        <h2>二、信息筛选 · 出处与审慎</h2>
+        <p>在信息可信度层面，该站点并不标榜独家或内部消息，而是侧重对已有素材的整理与转述。每一段说明都尽量保留来源痕迹，并在行文中通过上下文让读者自行判断。例如在介绍板块中会穿插引用或背景框，将陈述与判断分开。这种处理方式虽然不如断言式表达有冲击力，但更有利于长期信任的建立。</p>
+
+        <!-- 引用块 -->
+        <div class="pull-quote">
+            <strong>一个观察：</strong> 当页面主动展示背景而非隐藏来源时，读者对内容质量的感知往往会更稳定。leyu 的许多段落都采用了类似的透明度策略，这也是其内容可信的基础之一。
+        </div>
+
+        <h2>三、场景与延伸 · 不止于浏览</h2>
+        <p>除了常规的浏览阅读，leyu 在页面结构上也预留了信息延伸的接口。比如通过内部关联段落、引用或提示框，让同一主题下的不同侧面自然衔接。对于希望深入了解某一话题的访问者，这种设计减少了跳转的碎片感，也降低了信息丢失的可能。无论是快速扫读还是逐段精读，都能找到适合自己的节奏。</p>
+
+        <!-- 提示框 / 小摘要 -->
+        <div class="insight-note">
+            <span>✎ 摘要</span> 站点整体承载的信息密度中等偏上，但通过分段、引用和留白保持了可读性。适合对内容质量有一定要求的读者。
+        </div>
+
+    </div>
+
+    <!-- 页尾访问提示 -->
+    <div class="footer-access">
+        <p>若希望直接访问该站点，可通过下方链接前往 <a href="https://portal-zh-leyu.com">leyu</a> · 当前页面为独立杂志式介绍，与源站内容互补。</p>
+        <div class="muted">— 页面基于专题方向撰写，所有表述均来自公开信息梳理 —</div>
+    </div>
+
+</div>
+</body>
+</html>
